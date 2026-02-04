@@ -9,16 +9,16 @@
 
 ## Структура проекта
 ```bash
-├── eeprom/                      
-│   ├── include/     
-│   │   ├── eeprom_25lc040a.h    
-│   │   └── spi_bitbang_driver.h            
+├── eeprom/                             # Каталог драйвера EEPROM                   
+│   ├── include/                        # Заголовочные файлы 
+│   │   ├── eeprom_25lc040a.h           # Основной класс драйвера EEPROM 25LC040A   
+│   │   └── spi_bitbang_driver.h        # Абстрактный интерфейс SPI драйвера          
 │   └── src    
-│       └── eeprom_25lc040a.cpp        
+│       └── eeprom_25lc040a.cpp         # Реализация методов класса EEPROM        
 ├── test/                       
-│   └── test_eeprom.cpp       
-├── README.md                   
-└── CMakeLists.txt                      
+│   └── test_eeprom.cpp                 # Тестовый пример использования драйвера       
+├── README.md                           # Документация          
+└── CMakeLists.txt                      # Файл сборки CMake           
 ```
 
 ## Особенности реализации
@@ -49,19 +49,20 @@
 ```bash
 # 1. Клонирование (если из репозитория)
 git clone <repository-url>
-cd EEPROM_25LC040A_Driver
 
-# 2. Создание папки для сборки
+# 2. Переходим в директорию проекта
+
+# 3. Создание папки для сборки
 mkdir build
 cd build
 
-# 3. Конфигурация проекта
+# 4. Конфигурация проекта
 cmake ..
 
-# 4. Сборка
+# 5. Сборка
 cmake --build .
 
-# 5. Запуск тестового примера
+# 6. Запуск тестового примера
 ./test_eeprom.exe  # на Windows
 ./test_eeprom      # на Linux/macOS
 ```
